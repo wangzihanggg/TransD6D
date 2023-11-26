@@ -1,0 +1,10 @@
+local_rank: 0
+cls_id in lm_dataset.py 1
+Traceback (most recent call last):
+  File "apps/train_lm.py", line 772, in <module>
+    train()
+  File "apps/train_lm.py", line 607, in train
+    train_ds = dataset_desc.Dataset('train', cls_type=opt.linemod_cls)
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/datasets/linemod/linemod_dataset.py", line 50, in __init__
+    meta_file = open(os.path.join(self.cls_root, 'gt.yml'), "r")
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/linemod/data/01/gt.yml'

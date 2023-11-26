@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "apps/train_lm.py", line 772, in <module>
+    train()
+  File "apps/train_lm.py", line 587, in train
+    torch.distributed.init_process_group(
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/distributed/distributed_c10d.py", line 754, in init_process_group
+    store, rank, world_size = next(rendezvous_iterator)
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/distributed/rendezvous.py", line 236, in _env_rendezvous_handler
+    rank = int(_get_env_or_raise("RANK"))
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/distributed/rendezvous.py", line 221, in _get_env_or_raise
+    raise _env_error(env_var)
+ValueError: Error initializing torch.distributed using env:// rendezvous: environment variable RANK expected, but not set
+local_rank: 0

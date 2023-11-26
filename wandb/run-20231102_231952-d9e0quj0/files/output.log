@@ -1,0 +1,87 @@
+local_rank: 0
+cls_id in lm_dataset.py 1
+render data length:  0
+Warning: Trainnig without rendered data will hurt model performance
+Please generate rendered data from https://github.com/ethnhe/raster_triangle.
+fused data length:  0
+Warning: Trainnig without fused data will hurt model performance
+Please generate fused data from https://github.com/ethnhe/raster_triangle.
+train_dataset_size:  186
+cls_id in lm_dataset.py 1
+test_dataset_size:  1050
+Number of model parameters:  37960145
+local_rank: 0
+Selected optimization level O0:  Pure FP32 training.
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O0
+cast_model_type        : torch.float32
+patch_torch_functions  : False
+keep_batchnorm_fp32    : None
+master_weights         : False
+loss_scale             : 1.0
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O0
+cast_model_type        : torch.float32
+patch_torch_functions  : False
+keep_batchnorm_fp32    : None
+master_weights         : False
+loss_scale             : 1.0
+==> Checkpoint 'train_log/test_1/ape/checkpoints/ape.pth.tar' not found
+Totally train 500 iters per gpu.
+/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/mmsegmentation/mmseg/models/decode_heads/decode_head.py:94: UserWarning: For binary segmentation, we suggest using`out_channels = 1` to define the outputchannels of segmentor, and use `threshold`to convert seg_logist into a predictionapplying a threshold
+  warnings.warn('For binary segmentation, we suggest using'
+/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/mmsegmentation/mmseg/models/losses/cross_entropy_loss.py:235: UserWarning: Default ``avg_non_ignore`` is False, if you would like to ignore the certain label and average loss over non-ignore labels, which is the same with PyTorch official cross_entropy, set ``avg_non_ignore=True``.
+  warnings.warn(
+/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.parallel.convert_syncbn_model is deprecated and will be removed by the end of February 2023. Use `torch.nn.SyncBatchNorm.convert_sync_batchnorm`.
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+  0%|                                                                                                                                                                                               | 0/20 [00:00<?, ?it/s]
+  0%|                                                                                                                                                                                               | 0/25 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "apps/train_lm.py", line 750, in <module>
+    train()
+  File "apps/train_lm.py", line 732, in train
+    trainer.train(
+  File "apps/train_lm.py", line 508, in train
+    for batch in tqdm.tqdm(train_loader):
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/tqdm/std.py", line 1182, in __iter__
+    for obj in iterable:
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1333, in _next_data
+    return self._process_data(data)
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1359, in _process_data
+    data.reraise()
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/datasets/linemod/linemod_dataset.py", line 569, in __getitem__
+    data = self.get_item(item_name)
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/datasets/linemod/linemod_dataset.py", line 408, in get_item
+    RTs, kp3ds, ctr3ds, cls_ids, kp_targ_ofst, ctr_targ_ofst = self.get_pose_gt_info(
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/datasets/linemod/linemod_dataset.py", line 534, in get_pose_gt_info
+    ctr = self.bs_utils.get_ctr(self.cls_type, ds_type="linemod")[:, None]
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/utils/basic_utils.py", line 714, in get_ctr
+    cors = np.loadtxt(cor_pattern.format(cls), dtype=np.float32)
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/numpy/lib/npyio.py", line 1308, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/numpy/lib/npyio.py", line 955, in _read
+    fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/numpy/lib/_datasource.py", line 193, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "/home/wangzihanggg/miniconda3/envs/pytorch/lib/python3.8/site-packages/numpy/lib/_datasource.py", line 533, in open
+    raise FileNotFoundError(f"{path} not found.")
+FileNotFoundError: datasets/linemod/Linemod_preprocessed/kps_orb9_fps/ape_corners.txt not found.

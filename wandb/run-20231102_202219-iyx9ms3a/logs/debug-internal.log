@@ -1,0 +1,199 @@
+2023-11-02 20:22:19,384 INFO    StreamThr :8004 [internal.py:wandb_internal():86] W&B internal server running at pid: 8004, started at: 2023-11-02 20:22:19.383194
+2023-11-02 20:22:19,386 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: status
+2023-11-02 20:22:19,388 INFO    WriterThread:8004 [datastore.py:open_for_write():85] open: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/run-iyx9ms3a.wandb
+2023-11-02 20:22:19,389 DEBUG   SenderThread:8004 [sender.py:send():380] send: header
+2023-11-02 20:22:19,401 DEBUG   SenderThread:8004 [sender.py:send():380] send: run
+2023-11-02 20:22:20,608 INFO    SenderThread:8004 [dir_watcher.py:__init__():211] watching files in: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files
+2023-11-02 20:22:20,608 INFO    SenderThread:8004 [sender.py:_start_run_threads():1122] run started: iyx9ms3a with start time 1698927739.382437
+2023-11-02 20:22:20,621 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: check_version
+2023-11-02 20:22:20,621 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: check_version
+2023-11-02 20:22:21,525 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: run_start
+2023-11-02 20:22:21,529 DEBUG   HandlerThread:8004 [system_info.py:__init__():32] System info init
+2023-11-02 20:22:21,529 DEBUG   HandlerThread:8004 [system_info.py:__init__():47] System info init done
+2023-11-02 20:22:21,529 INFO    HandlerThread:8004 [system_monitor.py:start():194] Starting system monitor
+2023-11-02 20:22:21,529 INFO    SystemMonitor:8004 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-02 20:22:21,530 INFO    HandlerThread:8004 [system_monitor.py:probe():214] Collecting system info
+2023-11-02 20:22:21,531 INFO    SystemMonitor:8004 [interfaces.py:start():190] Started cpu monitoring
+2023-11-02 20:22:21,532 INFO    SystemMonitor:8004 [interfaces.py:start():190] Started disk monitoring
+2023-11-02 20:22:21,533 INFO    SystemMonitor:8004 [interfaces.py:start():190] Started gpu monitoring
+2023-11-02 20:22:21,534 INFO    SystemMonitor:8004 [interfaces.py:start():190] Started memory monitoring
+2023-11-02 20:22:21,535 INFO    SystemMonitor:8004 [interfaces.py:start():190] Started network monitoring
+2023-11-02 20:22:21,542 ERROR   gpu       :8004 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 20:22:21,583 DEBUG   HandlerThread:8004 [system_info.py:probe():196] Probing system
+2023-11-02 20:22:21,591 DEBUG   HandlerThread:8004 [system_info.py:_probe_git():181] Probing git
+2023-11-02 20:22:21,608 DEBUG   HandlerThread:8004 [system_info.py:_probe_git():189] Probing git done
+2023-11-02 20:22:21,608 DEBUG   HandlerThread:8004 [system_info.py:probe():244] Probing system done
+2023-11-02 20:22:21,609 DEBUG   HandlerThread:8004 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-88-generic-x86_64-with-glibc2.17', 'python': '3.8.18', 'heartbeatAt': '2023-11-02T12:22:21.583977', 'startedAt': '2023-11-02T12:22:19.376090', 'docker': None, 'cuda': None, 'args': ('--local_rank=0', '--gpus=1', '--wandb_proj', 'pose_estimation', '--wandb_name', 'test_1', '--num_threads', '4', '--gpu_id', '0', '--gpus', '1', '--gpu', '0', '--lr', '1e-2', '--dataset_name', 'linemod', '--data_root', 'datasets/linemod/Linemod_preprocessed', '--train_list', 'train.txt', '--test_list', 'test.txt', '--linemod_cls=ape', '--load_checkpoint', 'train_log/test_1/ape/checkpoints/ape.pth.tar', '--in_c', '9', '--lm_no_pbr', '--mini_batch_size', '9', '--val_mini_batch_size', '9', '--log_eval_dir', 'train_log/test_1/ape/eval_results', '--save_checkpoint', 'train_log/test_1/ape/checkpoints', '--log_traininfo_dir', 'train_log/test_1/ape/train_info'), 'state': 'running', 'program': 'apps/train_lm.py', 'codePathLocal': 'apps/train_lm.py', 'codePath': 'swin_de_pose/apps/train_lm.py', 'git': {'remote': 'https://github.com/zhujunli1993/SwinDePose.git', 'commit': '77fcd7aa3cd4d71f8263ecbb67dd46815d2bc5d0'}, 'email': 'wangzihanggg@hotmail.com', 'root': '/home/wangzihanggg/codespace/SwinDePose', 'host': 'g14', 'username': 'wangzihanggg', 'executable': '/home/wangzihanggg/miniconda3/envs/pytorch/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 1419.4515, 'min': 1400.0, 'max': 2900.0}, 'cpu_freq_per_core': [{'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1401.706, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}], 'disk': {'/': {'total': 250.92389297485352, 'used': 162.88677215576172}}, 'gpu': 'NVIDIA GeForce GTX 1660 Ti with Max-Q Design', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1660 Ti with Max-Q Design', 'memory_total': 6233391104}], 'memory': {'total': 15.039180755615234}}
+2023-11-02 20:22:21,609 INFO    HandlerThread:8004 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-02 20:22:21,609 INFO    HandlerThread:8004 [system_monitor.py:probe():227] Publishing system info
+2023-11-02 20:22:21,609 DEBUG   HandlerThread:8004 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-02 20:22:21,610 DEBUG   HandlerThread:8004 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-02 20:22:21,612 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/requirements.txt
+2023-11-02 20:22:21,612 DEBUG   HandlerThread:8004 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-11-02 20:22:22,611 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/conda-environment.yaml
+2023-11-02 20:22:23,495 DEBUG   HandlerThread:8004 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-02 20:22:23,496 INFO    HandlerThread:8004 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-02 20:22:23,500 DEBUG   SenderThread:8004 [sender.py:send():380] send: files
+2023-11-02 20:22:23,500 INFO    SenderThread:8004 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-02 20:22:23,507 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 20:22:23,507 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 20:22:23,509 DEBUG   SenderThread:8004 [sender.py:send():380] send: telemetry
+2023-11-02 20:22:23,509 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 20:22:23,545 ERROR   gpu       :8004 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 20:22:23,611 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/conda-environment.yaml
+2023-11-02 20:22:23,612 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/wandb-metadata.json
+2023-11-02 20:22:24,611 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/output.log
+2023-11-02 20:22:24,884 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 20:22:24,886 DEBUG   SenderThread:8004 [sender.py:send():380] send: exit
+2023-11-02 20:22:24,886 INFO    SenderThread:8004 [sender.py:send_exit():585] handling exit code: 1
+2023-11-02 20:22:24,886 INFO    SenderThread:8004 [sender.py:send_exit():587] handling runtime: 3
+2023-11-02 20:22:24,889 INFO    SenderThread:8004 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 20:22:24,890 INFO    SenderThread:8004 [sender.py:send_exit():593] send defer
+2023-11-02 20:22:24,890 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,890 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-02 20:22:24,891 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,891 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-02 20:22:24,891 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 1
+2023-11-02 20:22:24,891 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,891 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-02 20:22:24,891 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,892 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-02 20:22:24,892 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 2
+2023-11-02 20:22:24,892 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,892 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-02 20:22:24,892 INFO    HandlerThread:8004 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-02 20:22:24,892 INFO    HandlerThread:8004 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-02 20:22:24,893 DEBUG   SystemMonitor:8004 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-02 20:22:24,893 INFO    HandlerThread:8004 [interfaces.py:finish():202] Joined disk monitor
+2023-11-02 20:22:24,893 DEBUG   SystemMonitor:8004 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-02 20:22:24,894 DEBUG   SystemMonitor:8004 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-02 20:22:24,939 INFO    HandlerThread:8004 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-02 20:22:24,940 INFO    HandlerThread:8004 [interfaces.py:finish():202] Joined memory monitor
+2023-11-02 20:22:24,940 INFO    HandlerThread:8004 [interfaces.py:finish():202] Joined network monitor
+2023-11-02 20:22:24,941 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,941 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-02 20:22:24,941 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 3
+2023-11-02 20:22:24,941 DEBUG   SenderThread:8004 [sender.py:send():380] send: stats
+2023-11-02 20:22:24,941 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,942 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-02 20:22:24,942 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,942 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-02 20:22:24,942 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 4
+2023-11-02 20:22:24,942 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,942 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-02 20:22:24,943 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,943 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-02 20:22:24,943 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 5
+2023-11-02 20:22:24,943 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,943 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-02 20:22:24,944 DEBUG   SenderThread:8004 [sender.py:send():380] send: summary
+2023-11-02 20:22:24,944 INFO    SenderThread:8004 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 20:22:24,944 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,944 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-02 20:22:24,944 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 6
+2023-11-02 20:22:24,945 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:24,945 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-02 20:22:24,945 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:24,945 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-02 20:22:24,950 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 20:22:25,151 INFO    wandb-upload_0:8004 [upload_job.py:push():131] Uploaded file /tmp/tmpzbgi_6nmwandb/0wksurmx-wandb-metadata.json
+2023-11-02 20:22:25,612 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/wandb-summary.json
+2023-11-02 20:22:25,884 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:26,142 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 7
+2023-11-02 20:22:26,142 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:26,142 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:26,142 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-02 20:22:26,143 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:26,143 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-02 20:22:26,614 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/config.yaml
+2023-11-02 20:22:26,614 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/output.log
+2023-11-02 20:22:26,886 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:26,932 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 8
+2023-11-02 20:22:26,932 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:26,933 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:26,933 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-02 20:22:26,934 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:26,934 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-02 20:22:26,934 INFO    SenderThread:8004 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-02 20:22:26,935 INFO    SenderThread:8004 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-02 20:22:26,937 INFO    SenderThread:8004 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-02 20:22:26,945 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 9
+2023-11-02 20:22:26,946 DEBUG   SenderThread:8004 [sender.py:send():380] send: artifact
+2023-11-02 20:22:26,947 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:26,947 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-02 20:22:27,614 INFO    Thread-12 :8004 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/output.log
+2023-11-02 20:22:27,886 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:28,591 INFO    SenderThread:8004 [sender.py:send_artifact():1456] sent artifact job-https___github.com_zhujunli1993_SwinDePose.git_swin_de_pose_apps_train_lm.py - {'id': 'QXJ0aWZhY3Q6NjI1NDc2NTQx', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExMjAyMDcxMQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjI1NDc2NTQx', 'versionIndex': 0}}}
+2023-11-02 20:22:28,592 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:28,592 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-11-02 20:22:28,592 INFO    SenderThread:8004 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-02 20:22:28,615 INFO    SenderThread:8004 [dir_watcher.py:finish():388] scan: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files
+2023-11-02 20:22:28,616 INFO    SenderThread:8004 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/conda-environment.yaml conda-environment.yaml
+2023-11-02 20:22:28,616 INFO    SenderThread:8004 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/output.log output.log
+2023-11-02 20:22:28,616 INFO    SenderThread:8004 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/requirements.txt requirements.txt
+2023-11-02 20:22:28,626 INFO    SenderThread:8004 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/wandb-metadata.json wandb-metadata.json
+2023-11-02 20:22:28,626 INFO    SenderThread:8004 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/wandb-summary.json wandb-summary.json
+2023-11-02 20:22:28,626 INFO    SenderThread:8004 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/config.yaml config.yaml
+2023-11-02 20:22:28,634 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 10
+2023-11-02 20:22:28,635 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:28,636 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:28,636 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 10
+2023-11-02 20:22:28,637 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:28,638 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-11-02 20:22:28,638 INFO    SenderThread:8004 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-02 20:22:28,888 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:28,889 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:29,708 INFO    wandb-upload_1:8004 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/conda-environment.yaml
+2023-11-02 20:22:29,715 INFO    wandb-upload_2:8004 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/requirements.txt
+2023-11-02 20:22:29,827 INFO    wandb-upload_4:8004 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/config.yaml
+2023-11-02 20:22:29,890 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:29,890 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:29,935 INFO    wandb-upload_0:8004 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/output.log
+2023-11-02 20:22:30,733 INFO    wandb-upload_3:8004 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/files/wandb-summary.json
+2023-11-02 20:22:30,892 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:30,892 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:30,934 INFO    Thread-11 :8004 [sender.py:transition_state():613] send defer: 11
+2023-11-02 20:22:30,935 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:30,935 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 11
+2023-11-02 20:22:30,935 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:30,936 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-11-02 20:22:30,936 INFO    SenderThread:8004 [file_pusher.py:join():181] waiting for file pusher
+2023-11-02 20:22:30,936 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 12
+2023-11-02 20:22:30,936 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:30,936 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 12
+2023-11-02 20:22:30,936 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:30,936 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-11-02 20:22:30,937 INFO    SenderThread:8004 [file_stream.py:finish():595] file stream finish called
+2023-11-02 20:22:31,551 INFO    SenderThread:8004 [file_stream.py:finish():599] file stream finish is done
+2023-11-02 20:22:31,551 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 13
+2023-11-02 20:22:31,551 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:31,551 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 13
+2023-11-02 20:22:31,552 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:31,552 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-11-02 20:22:31,552 INFO    SenderThread:8004 [sender.py:transition_state():613] send defer: 14
+2023-11-02 20:22:31,552 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 20:22:31,553 DEBUG   SenderThread:8004 [sender.py:send():380] send: final
+2023-11-02 20:22:31,553 INFO    HandlerThread:8004 [handler.py:handle_request_defer():172] handle defer: 14
+2023-11-02 20:22:31,553 DEBUG   SenderThread:8004 [sender.py:send():380] send: footer
+2023-11-02 20:22:31,554 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: defer
+2023-11-02 20:22:31,554 INFO    SenderThread:8004 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-11-02 20:22:31,555 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:31,555 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:31,556 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 20:22:31,556 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: server_info
+2023-11-02 20:22:31,557 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 20:22:31,557 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: server_info
+2023-11-02 20:22:31,562 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: get_summary
+2023-11-02 20:22:31,563 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: sampled_history
+2023-11-02 20:22:31,563 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 20:22:31,563 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: job_info
+2023-11-02 20:22:32,063 DEBUG   SenderThread:8004 [sender.py:send_request():407] send_request: job_info
+2023-11-02 20:22:32,063 INFO    MainThread:8004 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-11-02 20:22:32,064 INFO    MainThread:8004 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-11-02 20:22:32,064 INFO    MainThread:8004 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2023-11-02 20:22:32,064 DEBUG   HandlerThread:8004 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-02 20:22:32,064 INFO    HandlerThread:8004 [handler.py:finish():866] shutting down handler
+2023-11-02 20:22:32,564 INFO    WriterThread:8004 [datastore.py:close():294] close: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_202219-iyx9ms3a/run-iyx9ms3a.wandb
+2023-11-02 20:22:33,064 INFO    SenderThread:8004 [sender.py:finish():1534] shutting down sender
+2023-11-02 20:22:33,064 INFO    SenderThread:8004 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-02 20:22:33,064 INFO    SenderThread:8004 [file_pusher.py:join():181] waiting for file pusher

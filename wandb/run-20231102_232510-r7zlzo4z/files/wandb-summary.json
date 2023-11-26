@@ -1,0 +1,1 @@
+{"epoch": 0, "it": 12, "training loss": {"loss_rgbd_seg": 0.39961889386177063, "loss_kp_of": 0.9992671608924866, "loss_ctr_of": 0.6857638359069824, "loss_all": 2.4842686653137207, "loss_target": 2.4842686653137207}, "train_acc": {"acc_rgbd": 0.3971875011920929}, "_timestamp": 1698938727.9921992, "_runtime": 17.3161301612854, "_step": 12, "_wandb": {"runtime": 15}}

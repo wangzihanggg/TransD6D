@@ -1,0 +1,379 @@
+wandb_version: 1
+
+dataset_name:
+  desc: null
+  value: linemod
+linemod_cls:
+  desc: null
+  value: ape
+occ_linemod_cls:
+  desc: null
+  value: ape
+syn:
+  desc: null
+  value: false
+real:
+  desc: null
+  value: false
+width:
+  desc: null
+  value: 640
+height:
+  desc: null
+  value: 480
+data_root:
+  desc: null
+  value: datasets/linemod/Linemod_preprocessed
+lab_depth_input:
+  desc: null
+  value: null
+lab_pose_save:
+  desc: null
+  value: null
+rm_outline:
+  desc: null
+  value: false
+angles_gen:
+  desc: null
+  value: null
+train_list:
+  desc: null
+  value: train.txt
+test_list:
+  desc: null
+  value: test.txt
+lm_no_fuse:
+  desc: null
+  value: false
+lm_no_render:
+  desc: null
+  value: false
+lm_no_pbr:
+  desc: null
+  value: true
+exp_dir:
+  desc: null
+  value: /workspace/REPO/pose_estimation
+wandb_proj:
+  desc: null
+  value: pose_estimation
+wandb_name:
+  desc: null
+  value: test_1
+gpu_id:
+  desc: null
+  value:
+  - '0'
+num_threads:
+  desc: null
+  value: 4
+serial_batches:
+  desc: null
+  value: false
+pin_memory:
+  desc: null
+  value: false
+local_rank:
+  desc: null
+  value: 0
+nodes:
+  desc: null
+  value: 1
+gpus:
+  desc: null
+  value: 1
+nr:
+  desc: null
+  value: 1
+gpu:
+  desc: null
+  value: '0'
+deterministic:
+  desc: null
+  value: false
+keep_batchnorm_fp32:
+  desc: null
+  value: true
+opt_level:
+  desc: null
+  value: O0
+depth_only:
+  desc: null
+  value: false
+rgb_only:
+  desc: null
+  value: false
+lab_vis:
+  desc: null
+  value: false
+lab_vis_input:
+  desc: null
+  value: null
+lab_vis_output:
+  desc: null
+  value: null
+pseudo_only:
+  desc: null
+  value: false
+add_depth:
+  desc: null
+  value: false
+depth_split:
+  desc: null
+  value: false
+attention:
+  desc: null
+  value: false
+add_rgb:
+  desc: null
+  value: false
+less_randla:
+  desc: null
+  value: false
+in_c:
+  desc: null
+  value: 9
+log_eval_dir:
+  desc: null
+  value: train_log/test_1/ape/eval_results
+save_checkpoint:
+  desc: null
+  value: train_log/test_1/ape/checkpoints
+load_checkpoint:
+  desc: null
+  value: train_log/test_1/ape/checkpoints/ape.pth.tar
+log_traininfo_dir:
+  desc: null
+  value: train_log/test_1/ape/train_info
+n_total_epoch:
+  desc: null
+  value: 25
+mini_batch_size:
+  desc: null
+  value: 1
+val_mini_batch_size:
+  desc: null
+  value: 1
+test_mini_batch_size:
+  desc: null
+  value: 1
+weight_decay:
+  desc: null
+  value: 0
+lr:
+  desc: null
+  value: 0.01
+cyc_max_lr:
+  desc: null
+  value: 0.001
+cyc_base_lr:
+  desc: null
+  value: 1.0e-05
+clr_div:
+  desc: null
+  value: 6
+max_lr:
+  desc: null
+  value: 0.0001
+lr_decay:
+  desc: null
+  value: 0.5
+decay_step:
+  desc: null
+  value: 200000.0
+bn_momentum:
+  desc: null
+  value: 0.9
+bn_decay:
+  desc: null
+  value: 0.5
+crop:
+  desc: null
+  value: false
+max_w:
+  desc: null
+  value: 200
+max_h:
+  desc: null
+  value: 200
+losses:
+  desc: null
+  value:
+  - ADD
+  - quat
+val_test_error:
+  desc: null
+  value: false
+eval_net:
+  desc: null
+  value: false
+resolution:
+  desc: null
+  value: 512
+test:
+  desc: null
+  value: false
+test_pose:
+  desc: null
+  value: false
+test_gt:
+  desc: null
+  value: false
+cal_metrics:
+  desc: null
+  value: false
+view_dpt:
+  desc: null
+  value: false
+debug:
+  desc: null
+  value: false
+n_sample_points:
+  desc: null
+  value: 19200
+n_keypoints:
+  desc: null
+  value: 8
+n_min_points:
+  desc: null
+  value: 400
+noise_trans:
+  desc: null
+  value: 0.05
+resnet_ptr_mdl_p:
+  desc: null
+  value: /workspace/pose-estimation-dls1/ffb6d/models/cnn/ResNet_pretrained_mdl
+k_n:
+  desc: null
+  value: 16
+num_layers:
+  desc: null
+  value: 4
+sub_grid_size:
+  desc: null
+  value: 0.06
+batch_size:
+  desc: null
+  value: 3
+val_batch_size:
+  desc: null
+  value: 3
+train_steps:
+  desc: null
+  value: 500
+val_steps:
+  desc: null
+  value: 100
+sub_sampling_ratio:
+  desc: null
+  value:
+  - 4
+  - 4
+  - 4
+  - 4
+d_out:
+  desc: null
+  value:
+  - 32
+  - 64
+  - 128
+  - 256
+psp_out:
+  desc: null
+  value: 512
+deep_features_size:
+  desc: null
+  value: 128
+psp_size:
+  desc: null
+  value: 256
+ds_depth_oc:
+  desc: null
+  value:
+  - 64
+  - 128
+  - 256
+  - 512
+ds_rgb_oc:
+  desc: null
+  value:
+  - 64
+  - 128
+  - 256
+  - 512
+ds_rgb_oc_ori:
+  desc: null
+  value:
+  - 64
+  - 128
+  - 256
+  - 512
+ds_depth_oc_fuse:
+  desc: null
+  value:
+  - 128
+  - 256
+  - 512
+  - 512
+ds_rgb_ori_oc_fuse:
+  desc: null
+  value:
+  - 128
+  - 256
+  - 512
+  - 512
+up_depth_oc:
+  desc: null
+  value:
+  - 512
+  - 256
+  - 64
+  - 64
+up_rgb_oc:
+  desc: null
+  value:
+  - 256
+  - 64
+  - 64
+world_size:
+  desc: null
+  value: 1
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.18
+    cli_version: 0.15.12
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1698938574.060118
+    t:
+      1:
+      - 1
+      - 5
+      - 37
+      - 41
+      - 51
+      - 53
+      - 55
+      - 60
+      - 105
+      2:
+      - 1
+      - 5
+      - 37
+      - 41
+      - 51
+      - 53
+      - 55
+      - 60
+      - 105
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.8.18
+      5: 0.15.12
+      8:
+      - 5
+      13: linux-x86_64

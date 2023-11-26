@@ -1,0 +1,164 @@
+{
+    "os": "Linux-5.15.0-88-generic-x86_64-with-glibc2.17",
+    "python": "3.8.18",
+    "heartbeatAt": "2023-11-02T08:37:44.738584",
+    "startedAt": "2023-11-02T08:37:42.472288",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--gpus=1",
+        "--wandb_proj",
+        "pose_estimation",
+        "--wandb_name",
+        "your_experiment_name",
+        "--num_threads",
+        "4",
+        "--gpu_id",
+        "0",
+        "--lr",
+        "1e-2",
+        "--dataset_name",
+        "linemod",
+        "--data_root",
+        "datasets/linemod/Linemod_preprocessed",
+        "--train_list",
+        "train.txt",
+        "--test_list",
+        "test.txt",
+        "--linemod_cls=ape",
+        "--load_checkpoint",
+        "your_experiment/swin_de_pose/train_log/your_experiment_name/ape/checkpoints/ape.pth.tar",
+        "--in_c",
+        "9",
+        "--lm_no_pbr",
+        "--mini_batch_size",
+        "9",
+        "--val_mini_batch_size",
+        "9",
+        "--log_eval_dir",
+        "your_experiment/swin_de_pose/train_log/your_experiment_name/ape/eval_results",
+        "--save_checkpoint",
+        "your_experiment/swin_de_pose/train_log/your_experiment_name/ape/checkpoints",
+        "--log_traininfo_dir",
+        "your_experiment/swin_de_pose/train_log/your_experiment_name/ape/train_info"
+    ],
+    "state": "running",
+    "program": "apps/train_lm.py",
+    "codePathLocal": "apps/train_lm.py",
+    "codePath": "swin_de_pose/apps/train_lm.py",
+    "git": {
+        "remote": "https://github.com/zhujunli1993/SwinDePose.git",
+        "commit": "77fcd7aa3cd4d71f8263ecbb67dd46815d2bc5d0"
+    },
+    "email": "wangzihanggg@hotmail.com",
+    "root": "/home/wangzihanggg/codespace/SwinDePose",
+    "host": "g14",
+    "username": "wangzihanggg",
+    "executable": "/home/wangzihanggg/miniconda3/envs/pytorch/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 1513.7438750000001,
+        "min": 1400.0,
+        "max": 2900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1419.902,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1700.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 2404.968,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 250.92389297485352,
+            "used": 162.86701202392578
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1660 Ti with Max-Q Design",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1660 Ti with Max-Q Design",
+            "memory_total": 6233391104
+        }
+    ],
+    "memory": {
+        "total": 15.039180755615234
+    }
+}

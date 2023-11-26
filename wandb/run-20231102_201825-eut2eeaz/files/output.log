@@ -1,0 +1,12 @@
+local_rank: 0
+cls_id in lm_dataset.py 1
+Traceback (most recent call last):
+  File "apps/train_lm.py", line 750, in <module>
+    train()
+  File "apps/train_lm.py", line 587, in train
+    train_ds = dataset_desc.Dataset('train', cls_type=opt.linemod_cls)
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/datasets/linemod/linemod_dataset.py", line 58, in __init__
+    self.rnd_lst = self.bs_utils.read_lines(self.config.render_files)
+  File "/home/wangzihanggg/codespace/SwinDePose/swin_de_pose/utils/basic_utils.py", line 184, in read_lines
+    with open(p, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/linemod/Linemod_preprocessed/renders_nrm/ape/file_list.txt'

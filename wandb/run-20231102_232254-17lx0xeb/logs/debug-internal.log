@@ -1,0 +1,1096 @@
+2023-11-02 23:22:54,061 INFO    StreamThr :19585 [internal.py:wandb_internal():86] W&B internal server running at pid: 19585, started at: 2023-11-02 23:22:54.060492
+2023-11-02 23:22:54,064 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status
+2023-11-02 23:22:54,066 INFO    WriterThread:19585 [datastore.py:open_for_write():85] open: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/run-17lx0xeb.wandb
+2023-11-02 23:22:54,067 DEBUG   SenderThread:19585 [sender.py:send():380] send: header
+2023-11-02 23:22:54,087 DEBUG   SenderThread:19585 [sender.py:send():380] send: run
+2023-11-02 23:22:59,088 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-02 23:23:04,090 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-02 23:23:09,091 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-02 23:23:13,308 INFO    SenderThread:19585 [dir_watcher.py:__init__():211] watching files in: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files
+2023-11-02 23:23:13,320 INFO    SenderThread:19585 [sender.py:_start_run_threads():1122] run started: 17lx0xeb with start time 1698938574.060118
+2023-11-02 23:23:13,321 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:13,322 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: check_version
+2023-11-02 23:23:13,322 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: check_version
+2023-11-02 23:23:14,331 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: run_start
+2023-11-02 23:23:14,333 DEBUG   HandlerThread:19585 [system_info.py:__init__():32] System info init
+2023-11-02 23:23:14,333 DEBUG   HandlerThread:19585 [system_info.py:__init__():47] System info init done
+2023-11-02 23:23:14,333 INFO    HandlerThread:19585 [system_monitor.py:start():194] Starting system monitor
+2023-11-02 23:23:14,333 INFO    SystemMonitor:19585 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-02 23:23:14,334 INFO    HandlerThread:19585 [system_monitor.py:probe():214] Collecting system info
+2023-11-02 23:23:14,334 INFO    SystemMonitor:19585 [interfaces.py:start():190] Started cpu monitoring
+2023-11-02 23:23:14,334 INFO    SystemMonitor:19585 [interfaces.py:start():190] Started disk monitoring
+2023-11-02 23:23:14,335 INFO    SystemMonitor:19585 [interfaces.py:start():190] Started gpu monitoring
+2023-11-02 23:23:14,336 INFO    SystemMonitor:19585 [interfaces.py:start():190] Started memory monitoring
+2023-11-02 23:23:14,337 INFO    SystemMonitor:19585 [interfaces.py:start():190] Started network monitoring
+2023-11-02 23:23:14,343 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:14,386 DEBUG   HandlerThread:19585 [system_info.py:probe():196] Probing system
+2023-11-02 23:23:14,394 DEBUG   HandlerThread:19585 [system_info.py:_probe_git():181] Probing git
+2023-11-02 23:23:14,406 DEBUG   HandlerThread:19585 [system_info.py:_probe_git():189] Probing git done
+2023-11-02 23:23:14,406 DEBUG   HandlerThread:19585 [system_info.py:probe():244] Probing system done
+2023-11-02 23:23:14,406 DEBUG   HandlerThread:19585 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-88-generic-x86_64-with-glibc2.17', 'python': '3.8.18', 'heartbeatAt': '2023-11-02T15:23:14.386343', 'startedAt': '2023-11-02T15:22:54.054982', 'docker': None, 'cuda': None, 'args': ('--local_rank=0', '--gpus=1', '--wandb_proj', 'pose_estimation', '--wandb_name', 'test_1', '--num_threads', '4', '--gpu_id', '0', '--gpus', '1', '--gpu', '0', '--lr', '1e-2', '--dataset_name', 'linemod', '--data_root', 'datasets/linemod/Linemod_preprocessed', '--train_list', 'train.txt', '--test_list', 'test.txt', '--linemod_cls=ape', '--load_checkpoint', 'train_log/test_1/ape/checkpoints/ape.pth.tar', '--in_c', '9', '--lm_no_pbr', '--mini_batch_size', '1', '--val_mini_batch_size', '1', '--log_eval_dir', 'train_log/test_1/ape/eval_results', '--save_checkpoint', 'train_log/test_1/ape/checkpoints', '--log_traininfo_dir', 'train_log/test_1/ape/train_info'), 'state': 'running', 'program': 'apps/train_lm.py', 'codePathLocal': 'apps/train_lm.py', 'codePath': 'swin_de_pose/apps/train_lm.py', 'git': {'remote': 'https://github.com/zhujunli1993/SwinDePose.git', 'commit': '77fcd7aa3cd4d71f8263ecbb67dd46815d2bc5d0'}, 'email': 'wangzihanggg@hotmail.com', 'root': '/home/wangzihanggg/codespace/SwinDePose', 'host': 'g14', 'username': 'wangzihanggg', 'executable': '/home/wangzihanggg/miniconda3/envs/pytorch/bin/python', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 1510.9036875000002, 'min': 1400.0, 'max': 2900.0}, 'cpu_freq_per_core': [{'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1700.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 3356.511, 'min': 1400.0, 'max': 2900.0}, {'current': 1400.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1700.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1834.504, 'min': 1400.0, 'max': 2900.0}, {'current': 1700.0, 'min': 1400.0, 'max': 2900.0}, {'current': 1700.0, 'min': 1400.0, 'max': 2900.0}], 'disk': {'/': {'total': 250.92389297485352, 'used': 180.9948387145996}}, 'gpu': 'NVIDIA GeForce GTX 1660 Ti with Max-Q Design', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1660 Ti with Max-Q Design', 'memory_total': 6233391104}], 'memory': {'total': 15.039180755615234}}
+2023-11-02 23:23:14,406 INFO    HandlerThread:19585 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-02 23:23:14,406 INFO    HandlerThread:19585 [system_monitor.py:probe():227] Publishing system info
+2023-11-02 23:23:14,407 DEBUG   HandlerThread:19585 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-02 23:23:14,407 DEBUG   HandlerThread:19585 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-02 23:23:14,407 DEBUG   HandlerThread:19585 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-11-02 23:23:15,311 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/conda-environment.yaml
+2023-11-02 23:23:15,311 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/requirements.txt
+2023-11-02 23:23:16,346 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:16,467 DEBUG   HandlerThread:19585 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-02 23:23:16,467 INFO    HandlerThread:19585 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-02 23:23:16,469 DEBUG   SenderThread:19585 [sender.py:send():380] send: files
+2023-11-02 23:23:16,469 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-02 23:23:16,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:23:16,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:23:16,477 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:23:17,286 DEBUG   SenderThread:19585 [sender.py:send():380] send: telemetry
+2023-11-02 23:23:17,309 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/conda-environment.yaml
+2023-11-02 23:23:17,310 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:17,310 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-metadata.json
+2023-11-02 23:23:18,348 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:19,094 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:19,310 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:20,350 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:21,312 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:22,312 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:22,352 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:23,364 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:23,364 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:23,365 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:23,367 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:23,734 INFO    wandb-upload_0:19585 [upload_job.py:push():131] Uploaded file /tmp/tmps7b22d2rwandb/2hozjpgp-wandb-metadata.json
+2023-11-02 23:23:24,313 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:24,313 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_created():271] file/dir created: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:24,355 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:24,373 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:25,206 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:25,499 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:25,499 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:25,500 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:25,587 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:25,588 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:25,588 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:25,589 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:25,927 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:25,928 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:25,928 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:25,929 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:26,283 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:26,283 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:26,284 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:26,284 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:26,313 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/config.yaml
+2023-11-02 23:23:26,314 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:26,314 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:26,357 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:26,617 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:26,618 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:26,618 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:26,619 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:26,947 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:26,947 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:26,948 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:26,948 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:27,287 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:27,287 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:27,288 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:27,288 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:27,314 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:27,635 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:27,635 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:27,636 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:27,639 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:27,971 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:27,971 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:27,972 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:28,145 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:28,314 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:28,314 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:28,317 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:28,318 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:28,318 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:28,319 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:28,359 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:28,661 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:28,662 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:28,662 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:28,662 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:29,003 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:29,004 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:29,005 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:29,005 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:29,314 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:29,340 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:29,341 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:29,342 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:29,342 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:29,676 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:29,677 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:29,678 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:29,681 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:30,020 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:30,021 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:30,021 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:30,022 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:30,315 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:30,315 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:30,361 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:30,362 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:30,363 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:30,363 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:30,365 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:30,585 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:30,708 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:30,709 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:30,709 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:30,710 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:31,051 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:31,052 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:31,052 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:31,053 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:31,315 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:31,392 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:31,393 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:31,393 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:31,394 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:31,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:23:31,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:23:31,477 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:23:31,735 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:32,080 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:32,277 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:32,277 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:32,278 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:32,278 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:32,278 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:32,279 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:32,316 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:32,316 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:32,374 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:32,428 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:32,429 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:32,429 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:32,430 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:32,772 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:32,773 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:32,774 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:32,774 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:33,112 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:33,113 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:33,113 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:33,114 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:33,316 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:33,452 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:33,453 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:33,454 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:33,455 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:33,798 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:33,799 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:33,800 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:33,802 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:34,143 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:34,144 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:34,144 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:34,145 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:34,316 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:34,317 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:34,380 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:34,499 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:34,500 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:34,500 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:34,500 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:34,849 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:34,850 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:34,851 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:34,851 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:35,189 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:35,190 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:35,190 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:35,191 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:35,317 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:35,529 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:35,530 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:35,530 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:35,531 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:35,752 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:35,873 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:35,874 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:35,875 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:35,875 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:36,230 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:36,231 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:36,232 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:36,232 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:36,317 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:36,317 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:36,382 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:36,574 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:36,575 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:36,575 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:36,575 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:36,911 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:36,912 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:36,912 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:36,912 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:37,255 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:37,256 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:37,256 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:37,257 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:37,317 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:37,605 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:37,606 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:37,607 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:37,607 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:37,959 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:37,960 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:37,960 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:37,961 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:38,307 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:38,308 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:38,309 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:38,309 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:38,318 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:38,318 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:38,385 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:38,661 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:38,662 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:38,663 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:38,663 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:39,003 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:39,004 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:39,004 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:39,005 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:39,318 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:39,348 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:39,349 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:39,350 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:39,350 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:39,692 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:39,694 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:39,694 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:39,695 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:40,039 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:40,041 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:40,041 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:40,041 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:40,319 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:40,319 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:40,381 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:40,382 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:40,382 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:40,383 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:40,387 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:40,727 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:40,728 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:40,729 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:40,730 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:40,951 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:41,072 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:41,073 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:41,073 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:41,074 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:41,319 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:41,411 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:41,412 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:41,413 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:41,413 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:41,747 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:41,748 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:41,748 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:41,748 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:42,090 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:42,091 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:42,091 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:42,092 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:42,319 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:42,319 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:42,394 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:42,433 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:42,434 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:42,435 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:42,435 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:42,774 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:42,775 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:42,776 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:42,776 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:43,119 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:43,120 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:43,120 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:43,121 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:43,320 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:43,466 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:43,467 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:43,467 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:43,468 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:43,813 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:43,814 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:43,814 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:43,815 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:44,159 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:44,160 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:44,160 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:44,161 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:44,320 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:44,320 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:44,466 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:44,501 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:44,501 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:44,502 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:44,502 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:44,841 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:44,841 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:44,842 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:44,842 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:45,195 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:45,196 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:45,196 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:45,197 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:45,320 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:45,540 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:45,541 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:45,541 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:45,542 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:45,887 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:45,888 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:45,888 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:45,889 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:46,106 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:46,225 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:46,225 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:46,226 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:46,226 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:46,321 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:46,321 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:46,473 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:46,475 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:23:46,475 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:23:46,478 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:23:46,566 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:46,914 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:47,255 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:47,596 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:47,951 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:48,301 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:48,321 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:48,478 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:48,651 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:48,998 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:49,351 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:49,431 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,431 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,438 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,439 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,439 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,695 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:49,786 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,787 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,787 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,787 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,788 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,788 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,789 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,789 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,789 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,790 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,790 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,791 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,791 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,792 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,792 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,793 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,793 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,793 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,794 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,794 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,795 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,795 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:49,796 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:49,796 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:49,796 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:50,045 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:50,046 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:50,046 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:50,047 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:50,322 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:50,323 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:50,394 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:50,395 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:50,396 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:50,396 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:50,480 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:50,744 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:50,746 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:50,746 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:50,746 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:51,096 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:51,097 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:51,097 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:51,097 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:51,320 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:51,323 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:51,444 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:51,445 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:51,445 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:51,446 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:51,786 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:51,788 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:51,788 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:51,886 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:52,130 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:52,131 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:52,131 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:52,131 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:52,323 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:52,323 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:52,483 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:52,491 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:52,492 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:52,492 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:52,493 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:52,843 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:52,844 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:52,845 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:52,845 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:53,193 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:53,193 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:53,194 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:53,194 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:53,323 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:53,537 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:53,538 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:53,538 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:53,539 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:53,880 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:53,881 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:53,882 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:53,882 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:54,225 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:54,226 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:54,227 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:54,227 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:54,324 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:54,324 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:54,489 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:54,583 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:54,584 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:54,584 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:54,584 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:54,939 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:54,940 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:54,941 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:54,941 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:55,287 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:55,288 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:55,288 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:55,289 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:55,324 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:55,634 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:55,635 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:55,635 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:55,635 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:55,987 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:55,988 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:55,989 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:55,989 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:56,324 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:56,325 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:56,337 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:56,339 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:56,339 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:56,339 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:23:56,340 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:56,491 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:56,684 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:56,685 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:56,686 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:56,686 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:57,032 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:57,034 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:57,034 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:57,035 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:57,325 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:57,385 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:57,386 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:57,386 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:57,387 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:57,739 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:57,740 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:57,740 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:57,836 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:58,088 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:58,089 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:58,090 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:58,091 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:58,325 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:23:58,325 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:58,437 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:58,438 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:58,439 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:58,439 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:58,494 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:23:58,786 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:58,787 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:58,787 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:58,787 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:59,139 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:59,140 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:59,140 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:59,141 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:59,326 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:23:59,481 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:59,482 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:59,483 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:59,483 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:23:59,830 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:23:59,832 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:23:59,832 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:23:59,833 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:00,177 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:00,179 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:00,179 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:00,179 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:00,326 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:00,327 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:00,501 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:00,522 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:00,523 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:00,524 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:00,524 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:00,873 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:00,874 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:00,874 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:00,875 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:01,215 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:01,216 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:01,216 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:01,217 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:01,327 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:01,439 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:01,475 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:24:01,475 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:24:01,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:24:01,561 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:01,920 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:02,262 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:02,327 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:02,504 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:02,612 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:02,965 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:03,316 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:03,572 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,573 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,573 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:03,574 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,574 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,598 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:03,598 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,599 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,599 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:03,600 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,600 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,601 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:03,602 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,602 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,602 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:03,603 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,603 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,604 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:03,662 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:03,663 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:03,663 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:03,664 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:04,018 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:04,019 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:04,019 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:04,020 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:04,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:04,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:04,378 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:04,379 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:04,379 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:04,379 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:04,506 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:04,731 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:04,732 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:04,732 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:04,733 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:05,075 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:05,076 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:05,076 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:05,077 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:05,328 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:05,422 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:05,423 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:05,423 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:05,424 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:05,775 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:05,776 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:05,776 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:05,776 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:06,124 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:06,124 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:06,125 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:06,125 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:06,329 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:06,329 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:06,477 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:06,478 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:06,478 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:06,479 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:06,479 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:06,514 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:06,829 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:06,830 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:06,831 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:06,831 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:07,172 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:07,173 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:07,174 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:07,174 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:07,329 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:07,526 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:07,528 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:07,528 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:07,529 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:07,881 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:07,882 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:07,882 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:07,883 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:08,234 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:08,235 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:08,235 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:08,235 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:08,329 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:08,330 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:08,516 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:08,582 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:08,583 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:08,583 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:08,584 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:08,934 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:08,934 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:08,935 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:08,935 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:09,292 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:09,293 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:09,293 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:09,293 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:09,330 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:09,646 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:09,647 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:09,647 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:09,648 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:10,004 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:10,005 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:10,005 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:10,006 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:10,330 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:10,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:10,356 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:10,357 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:10,357 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:10,357 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:10,519 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:10,708 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:10,709 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:10,710 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:10,711 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:11,061 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:11,062 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:11,062 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:11,062 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:11,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:11,411 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:11,412 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:11,412 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:11,412 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:11,635 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:11,757 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:11,758 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:11,759 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:11,759 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:12,101 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:12,102 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:12,103 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:12,104 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:12,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:12,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:12,453 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:12,454 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:12,454 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:12,455 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:12,525 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:12,805 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:12,806 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:12,806 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:12,807 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:13,148 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:13,149 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:13,149 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:13,315 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:13,331 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:13,497 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:13,498 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:13,498 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:13,499 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:13,842 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:13,843 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:13,843 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:13,843 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:14,186 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:14,187 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:14,188 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:14,188 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:14,332 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:14,332 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:14,337 DEBUG   SystemMonitor:19585 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-02 23:24:14,338 DEBUG   SenderThread:19585 [sender.py:send():380] send: stats
+2023-11-02 23:24:14,534 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:14,534 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:14,535 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:14,535 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:14,577 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:14,880 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:14,881 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:14,881 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:14,882 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:15,228 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:15,229 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:15,229 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:15,230 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:15,332 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:15,584 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:15,585 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:15,585 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:15,585 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:15,933 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:15,934 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:15,934 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:15,935 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:16,274 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:16,276 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:16,276 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:16,277 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:16,332 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:16,333 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:16,475 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:24:16,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:24:16,477 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:24:16,583 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:16,622 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:16,977 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:17,099 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:17,100 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:17,100 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:17,101 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:17,101 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:17,101 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:17,138 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:17,322 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:17,323 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:17,323 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:17,333 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:17,373 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:17,671 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:17,672 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:17,672 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:17,744 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:18,033 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:18,034 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:18,034 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:18,036 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:18,333 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:18,334 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:18,383 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:18,385 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:18,386 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:18,386 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:18,585 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:18,816 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:18,817 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:18,817 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:18,818 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:19,165 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:19,166 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:19,167 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:19,167 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:19,334 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:19,521 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:19,522 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:19,522 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:19,522 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:19,872 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:19,873 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:19,874 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:19,875 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:20,222 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:20,223 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:20,223 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:20,224 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:20,334 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:20,334 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:20,572 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:20,573 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:20,573 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:20,574 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:20,588 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:20,925 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:20,926 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:20,926 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:20,927 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:21,274 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:21,275 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:21,276 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:21,276 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:21,334 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:21,624 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:21,625 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:21,625 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:21,626 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:21,976 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:21,977 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:21,977 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:21,977 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:22,202 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:22,324 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:22,325 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:22,325 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:22,326 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:22,335 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:22,335 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:22,591 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:22,681 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:22,682 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:22,682 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:22,683 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:23,025 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:23,026 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:23,027 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:23,027 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:23,335 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:23,374 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:23,376 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:23,376 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:23,376 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:23,726 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:23,727 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:23,728 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:23,728 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:24,076 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:24,077 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:24,077 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:24,083 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:24,336 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:24,336 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:24,431 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:24,432 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:24,432 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:24,432 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:24,593 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:24,780 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:24,781 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:24,781 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:24,781 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:25,127 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:25,128 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:25,129 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:25,129 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:25,336 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:25,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:25,477 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:25,477 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:25,478 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:25,823 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:25,825 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:25,825 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:25,826 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:26,168 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:26,169 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:26,170 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:26,170 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:26,337 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:26,337 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:26,515 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:26,516 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:26,517 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:26,517 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:26,596 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:26,869 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:26,871 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:26,871 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:26,871 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:27,215 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:27,216 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:27,216 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:27,216 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:27,217 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:27,337 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:27,570 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:27,571 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:27,572 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:27,572 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:28,025 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:28,026 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:28,026 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:28,027 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:28,337 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:28,338 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:28,379 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:28,380 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:28,380 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:28,381 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:28,605 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:28,725 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:28,726 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:28,726 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:28,727 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:29,081 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:29,081 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:29,082 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:29,083 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:29,338 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:29,427 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: partial_history
+2023-11-02 23:24:29,427 DEBUG   SenderThread:19585 [sender.py:send():380] send: history
+2023-11-02 23:24:29,428 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: summary_record
+2023-11-02 23:24:29,428 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:30,338 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:30,339 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:30,611 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:31,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:24:31,477 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:24:31,477 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:24:32,339 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:32,616 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:32,877 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:34,340 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:34,619 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:36,340 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:36,621 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:37,903 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:38,341 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:38,626 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:40,342 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:40,637 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:42,343 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:42,644 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:42,948 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:44,339 DEBUG   SenderThread:19585 [sender.py:send():380] send: stats
+2023-11-02 23:24:44,343 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:44,712 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:46,344 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:46,475 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-02 23:24:46,476 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: stop_status
+2023-11-02 23:24:46,476 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-02 23:24:46,718 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:48,134 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:48,345 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:48,721 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:50,346 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:50,724 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:52,347 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:52,730 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:53,193 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:54,347 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:54,738 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:56,348 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:56,747 ERROR   gpu       :19585 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2023-11-02 23:24:58,237 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:58,349 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:24:58,652 DEBUG   SenderThread:19585 [sender.py:send():380] send: exit
+2023-11-02 23:24:58,652 INFO    SenderThread:19585 [sender.py:send_exit():585] handling exit code: 255
+2023-11-02 23:24:58,652 INFO    SenderThread:19585 [sender.py:send_exit():587] handling runtime: 104
+2023-11-02 23:24:58,653 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:58,653 INFO    SenderThread:19585 [sender.py:send_exit():593] send defer
+2023-11-02 23:24:58,653 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,653 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-02 23:24:58,653 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,653 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-02 23:24:58,653 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 1
+2023-11-02 23:24:58,653 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,653 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-02 23:24:58,653 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,654 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-02 23:24:58,654 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 2
+2023-11-02 23:24:58,654 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,654 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-02 23:24:58,654 INFO    HandlerThread:19585 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-02 23:24:58,654 DEBUG   SystemMonitor:19585 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-02 23:24:58,654 INFO    HandlerThread:19585 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-02 23:24:58,654 DEBUG   SystemMonitor:19585 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-02 23:24:58,655 INFO    HandlerThread:19585 [interfaces.py:finish():202] Joined disk monitor
+2023-11-02 23:24:58,697 INFO    HandlerThread:19585 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-02 23:24:58,697 INFO    HandlerThread:19585 [interfaces.py:finish():202] Joined memory monitor
+2023-11-02 23:24:58,698 INFO    HandlerThread:19585 [interfaces.py:finish():202] Joined network monitor
+2023-11-02 23:24:58,698 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,698 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-02 23:24:58,698 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 3
+2023-11-02 23:24:58,698 DEBUG   SenderThread:19585 [sender.py:send():380] send: stats
+2023-11-02 23:24:58,698 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,699 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-02 23:24:58,699 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,699 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-02 23:24:58,699 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 4
+2023-11-02 23:24:58,700 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,700 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-02 23:24:58,700 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,700 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-02 23:24:58,700 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 5
+2023-11-02 23:24:58,700 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,700 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-02 23:24:58,700 DEBUG   SenderThread:19585 [sender.py:send():380] send: summary
+2023-11-02 23:24:58,701 INFO    SenderThread:19585 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-02 23:24:58,701 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,701 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-02 23:24:58,701 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 6
+2023-11-02 23:24:58,701 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,701 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-02 23:24:58,702 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,702 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-02 23:24:58,702 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 7
+2023-11-02 23:24:58,702 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: status_report
+2023-11-02 23:24:58,702 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:24:58,702 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-02 23:24:58,702 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:24:58,703 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-02 23:24:59,350 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:24:59,653 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 23:25:00,251 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 8
+2023-11-02 23:25:00,252 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: poll_exit
+2023-11-02 23:25:00,252 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:25:00,252 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-02 23:25:00,253 DEBUG   SenderThread:19585 [sender.py:send_request():407] send_request: defer
+2023-11-02 23:25:00,253 INFO    SenderThread:19585 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-02 23:25:00,253 INFO    SenderThread:19585 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-02 23:25:00,254 INFO    SenderThread:19585 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-02 23:25:00,256 INFO    SenderThread:19585 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-02 23:25:00,282 INFO    SenderThread:19585 [sender.py:transition_state():613] send defer: 9
+2023-11-02 23:25:00,283 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: defer
+2023-11-02 23:25:00,283 DEBUG   SenderThread:19585 [sender.py:send():380] send: artifact
+2023-11-02 23:25:00,283 INFO    HandlerThread:19585 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-02 23:25:00,350 INFO    Thread-12 :19585 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:25:00,654 DEBUG   HandlerThread:19585 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-02 23:25:03,588 WARNING StreamThr :19585 [internal.py:is_dead():414] Internal process exiting, parent pid 19533 disappeared
+2023-11-02 23:25:03,588 ERROR   StreamThr :19585 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-11-02 23:25:03,655 INFO    HandlerThread:19585 [handler.py:finish():866] shutting down handler
+2023-11-02 23:25:03,655 INFO    WriterThread:19585 [datastore.py:close():294] close: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/run-17lx0xeb.wandb
+2023-11-02 23:25:14,055 INFO    wandb-upload_1:19585 [upload_job.py:push():86] Skipped uploading /home/wangzihanggg/.local/share/wandb/artifacts/staging/tmp31wsailh
+2023-11-02 23:25:15,492 INFO    wandb-upload_0:19585 [upload_job.py:push():89] Uploaded file /home/wangzihanggg/.local/share/wandb/artifacts/staging/tmptycyvj50
+2023-11-02 23:25:19,180 INFO    SenderThread:19585 [sender.py:send_artifact():1456] sent artifact job-https___github.com_zhujunli1993_SwinDePose.git_swin_de_pose_apps_train_lm.py - {'id': 'QXJ0aWZhY3Q6NjI2MDE2NDc0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExMjAyMDcxMQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjI1NDc2NTQx', 'versionIndex': 0}}}
+2023-11-02 23:25:19,180 INFO    SenderThread:19585 [sender.py:finish():1534] shutting down sender
+2023-11-02 23:25:19,180 INFO    SenderThread:19585 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-02 23:25:19,355 INFO    SenderThread:19585 [dir_watcher.py:finish():388] scan: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files
+2023-11-02 23:25:19,355 INFO    SenderThread:19585 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/conda-environment.yaml conda-environment.yaml
+2023-11-02 23:25:19,356 INFO    SenderThread:19585 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log output.log
+2023-11-02 23:25:19,356 INFO    SenderThread:19585 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/requirements.txt requirements.txt
+2023-11-02 23:25:19,360 INFO    SenderThread:19585 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-metadata.json wandb-metadata.json
+2023-11-02 23:25:19,361 INFO    SenderThread:19585 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json wandb-summary.json
+2023-11-02 23:25:19,361 INFO    SenderThread:19585 [dir_watcher.py:finish():402] scan save: /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/config.yaml config.yaml
+2023-11-02 23:25:19,361 INFO    SenderThread:19585 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-02 23:25:19,361 INFO    SenderThread:19585 [file_pusher.py:join():181] waiting for file pusher
+2023-11-02 23:25:20,435 INFO    wandb-upload_4:19585 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/config.yaml
+2023-11-02 23:25:20,884 INFO    wandb-upload_0:19585 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/wandb-summary.json
+2023-11-02 23:25:21,521 INFO    wandb-upload_1:19585 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/conda-environment.yaml
+2023-11-02 23:25:21,757 INFO    wandb-upload_3:19585 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/requirements.txt
+2023-11-02 23:25:22,245 INFO    wandb-upload_2:19585 [upload_job.py:push():131] Uploaded file /home/wangzihanggg/codespace/SwinDePose/swin_de_pose/wandb/run-20231102_232254-17lx0xeb/files/output.log
+2023-11-02 23:25:22,878 INFO    SenderThread:19585 [file_stream.py:finish():595] file stream finish called
+2023-11-02 23:25:23,589 INFO    SenderThread:19585 [file_stream.py:finish():599] file stream finish is done
