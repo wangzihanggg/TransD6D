@@ -16,89 +16,6 @@ psp_models = {
 }
 
 
-def knn(x, k):
-    inner = -2 * torch.matmul(x.transpose(2, 1), x)
-    xx = torch.sum(x ** 2, dim=1, keepdim=True)
-    pairwise_distance = -xx - inner - xx.transpose(2, 1)
-
-    idx = pairwise_distance.topk(k=k, dim=-1)[1]  # (batch_size, num_points, k)
-    return idx
-
-def get_graph_feature(x, k=10, idx=None):
-    batch_size = x.size(0)
-    num_points = x.size(2)
-    x = x.view(batch_size, -1, num_points)
-    if idx is None:
-        idx = knn(x, k=k)  # (batch_size, num_points, k)
-    device = torch.device('cuda')
-
-    idx_base = torch.arange(0, batch_size, device=device).view(-1, 1, 1) * num_points
-
-    idx = idx + idx_base
-
-    idx = idx.view(-1)
-
-    _, num_dims, _ = x.size()
-
-    x = x.transpose(2, 1).contiguous()  # (batch_size, num_points, num_dims)  -> (batch_size*num_points, num_dims) #   batch_size * num_points * k + range(0, batch_size*num_points)
-    feature = x.view(batch_size * num_points, -1)[idx, :]
-    feature = feature.view(batch_size, num_points, k, num_dims)
-    x = x.view(batch_size, num_points, 1, num_dims).repeat(1, 1, k, 1)
-
-    feature = torch.cat((feature - x, x), dim=3).permute(0, 3, 1, 2).contiguous()
-
-    return feature
-
-class ConvHead(nn.Module):
-    def __init__(self, output_channels):
-        super(ConvHead, self).__init__()
-        self.bn = nn.BatchNorm1d(64)
-        self.bn_predict_head = nn.BatchNorm1d(output_channels)
-        self.relu = nn.ReLU(inplace=True)
-        self.pool1d = nn.MaxPool1d(kernel_size=2, stride=2, padding=0)
-        self.k = 20
-        self.conv1d_ds1 = nn.Sequential(nn.Conv1d(128, 64, kernel_size=3, stride=2, padding=1),
-                                        self.relu,
-                                        self.pool1d)
-        self.conv1d_ds2 = nn.Sequential(nn.Conv1d(64, 64, kernel_size=3, stride=2, padding=1),
-                                        self.relu,
-                                        self.pool1d)
-        self.conv1d_dc= nn.Sequential(nn.Conv1d(64, 64, kernel_size=1, stride=1, padding=0),
-                                        self.relu)
-        self.conv2d = nn.Sequential(nn.Conv2d(128, 64, kernel_size=1, stride=1, padding=0, dilation=1, bias=True),
-                                   self.bn,
-                                   self.relu)
-        self.deconv1 = nn.ConvTranspose1d(64, 64, kernel_size=4, stride=2, padding=1)
-        self.deconv2 = nn.ConvTranspose1d(64, output_channels, kernel_size=4, stride=2, padding=1)
-        self.predict_head = nn.Sequential(nn.Conv1d(64, output_channels, kernel_size=1, stride=1, padding=0, bias=True),
-                                          self.bn_predict_head,
-                                          self.relu)
-
-    def forward(self, x):
-        x = self.conv1d_ds1(x)
-        x = self.conv1d_ds2(x)
-        for i in range(3):
-            x = get_graph_feature(x, self.k)
-            x = self.conv2d(x)
-            x = x.max(dim=-1, keepdim=False)[0]
-            x = self.conv1d_dc(x)
-        x = self.deconv1(x)
-        x = self.deconv2(x)
-        x = self.predict_head(x)
-        return x
-
-class RGBDSegmentationHead(ConvHead):
-    def __init__(self, n_classes):
-        super(RGBDSegmentationHead, self).__init__(n_classes)
-
-class CenterOffsetHead(ConvHead):
-    def __init__(self):
-        super(CenterOffsetHead, self).__init__(3)
-
-class KeypointOffsetHead(ConvHead):
-    def __init__(self, n_kps):
-        super(KeypointOffsetHead, self).__init__(n_kps * 3)
-
 class SwinDePose(nn.Module):
     def __init__(
         self, n_classes, n_pts, rndla_cfg, n_kps=8
@@ -219,25 +136,21 @@ class SwinDePose(nn.Module):
             .conv1d(n_classes, activation=None)
         )
 
-        # self.ctr_ofst_layer = (
-        #     pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(3, activation=None)
-        # )
-        #
-        # self.kp_ofst_layer = (
-        #     pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(n_kps*3, activation=None)
-        # )
+        self.ctr_ofst_layer = (
+            pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(3, activation=None)
+        )
 
-        # self.rgbd_seg_layer = RGBDSegmentationHead(n_classes)
-        self.ctr_ofst_layer = CenterOffsetHead()
-        self.kp_ofst_layer = KeypointOffsetHead(n_kps)
+        self.kp_ofst_layer = (
+            pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(n_kps*3, activation=None)
+        )
 
 
     @staticmethod
@@ -388,9 +301,9 @@ class SwinDePose(nn.Module):
 
         # ###################### prediction stages #############################
         # print(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
-        rgbd_segs = self.rgbd_seg_layer(rgbd_emb) #(1,2,19200)
-        pred_kp_ofs = self.kp_ofst_layer(rgbd_emb) #(1,24,19200)
-        pred_ctr_ofs = self.ctr_ofst_layer(rgbd_emb) #(1,3,19200)
+        rgbd_segs = self.rgbd_seg_layer(rgbd_emb)
+        pred_kp_ofs = self.kp_ofst_layer(rgbd_emb)
+        pred_ctr_ofs = self.ctr_ofst_layer(rgbd_emb)
 
         pred_kp_ofs = pred_kp_ofs.view(
             bs, self.n_kps, 3, -1
