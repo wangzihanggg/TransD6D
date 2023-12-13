@@ -15,26 +15,93 @@ psp_models = {
     'resnet50': lambda: PSPNet(sizes=(1, 2, 3, 6), psp_size=2048, deep_features_size=1024, backend='resnet50'),
 }
 
-import torch
-import torch.nn as nn
 
-class TransformerHead(nn.Module):
-    def __init__(self, input_size, output_size, num_layers=3, hidden_size=128):
-        super(TransformerHead, self).__init__()
-        self.transformer = nn.TransformerEncoderLayer(d_model=input_size, nhead=8)
-        self.transformer_encoder = nn.TransformerEncoder(self.transformer, num_layers=num_layers)
-        self.fc = nn.Linear(input_size, output_size)
+def knn(x, k):
+    inner = -2 * torch.matmul(x.transpose(2, 1), x)
+    xx = torch.sum(x ** 2, dim=1, keepdim=True)
+    pairwise_distance = -xx - inner - xx.transpose(2, 1)
+
+    idx = pairwise_distance.topk(k=k, dim=-1)[1]  # (batch_size, num_points, k)
+    return idx
+
+def get_graph_feature(x, k=10, idx=None):
+    batch_size = x.size(0)
+    num_points = x.size(2)
+    x = x.view(batch_size, -1, num_points)
+    if idx is None:
+        idx = knn(x, k=k)  # (batch_size, num_points, k)
+    device = torch.device('cuda')
+
+    idx_base = torch.arange(0, batch_size, device=device).view(-1, 1, 1) * num_points
+
+    idx = idx + idx_base
+
+    idx = idx.view(-1)
+
+    _, num_dims, _ = x.size()
+
+    x = x.transpose(2, 1).contiguous()  # (batch_size, num_points, num_dims)  -> (batch_size*num_points, num_dims) #   batch_size * num_points * k + range(0, batch_size*num_points)
+    feature = x.view(batch_size * num_points, -1)[idx, :]
+    feature = feature.view(batch_size, num_points, k, num_dims)
+    x = x.view(batch_size, num_points, 1, num_dims).repeat(1, 1, k, 1)
+
+    feature = torch.cat((feature - x, x), dim=3).permute(0, 3, 1, 2).contiguous()
+
+    return feature
+
+class ConvHead(nn.Module):
+    def __init__(self, output_channels):
+        super(ConvHead, self).__init__()
+        self.bn = nn.BatchNorm1d(64)
+        self.bn_predict_head = nn.BatchNorm1d(output_channels)
+        self.relu = nn.ReLU(inplace=True)
+        self.pool1d = nn.MaxPool1d(kernel_size=2, stride=2, padding=0)
+        self.k = 20
+        self.conv1d_ds1 = nn.Sequential(nn.Conv1d(128, 64, kernel_size=3, stride=2, padding=1),
+                                        self.relu,
+                                        self.pool1d)
+        self.conv1d_ds2 = nn.Sequential(nn.Conv1d(64, 64, kernel_size=3, stride=2, padding=1),
+                                        self.relu,
+                                        self.pool1d)
+        self.conv1d_dc= nn.Sequential(nn.Conv1d(64, 64, kernel_size=1, stride=1, padding=0),
+                                        self.relu)
+        self.conv2d = nn.Sequential(nn.Conv2d(128, 64, kernel_size=1, stride=1, padding=0, dilation=1, bias=True),
+                                   self.bn,
+                                   self.relu)
+        self.deconv1 = nn.ConvTranspose1d(64, 64, kernel_size=4, stride=2, padding=1)
+        self.deconv2 = nn.ConvTranspose1d(64, output_channels, kernel_size=4, stride=2, padding=1)
+        self.predict_head = nn.Sequential(nn.Conv1d(64, output_channels, kernel_size=1, stride=1, padding=0, bias=True),
+                                          self.bn_predict_head,
+                                          self.relu)
 
     def forward(self, x):
-        x = x.permute(2, 0, 1)  # Change input shape to fit Transformer
-        x = self.transformer_encoder(x)
-        x = self.fc(x[-1, :, :])  # Take the output of the last position
+        x = self.conv1d_ds1(x)
+        x = self.conv1d_ds2(x)
+        for i in range(3):
+            x = get_graph_feature(x, self.k)
+            x = self.conv2d(x)
+            x = x.max(dim=-1, keepdim=False)[0]
+            x = self.conv1d_dc(x)
+        x = self.deconv1(x)
+        x = self.deconv2(x)
+        x = self.predict_head(x)
         return x
 
+class RGBDSegmentationHead(ConvHead):
+    def __init__(self, n_classes):
+        super(RGBDSegmentationHead, self).__init__(n_classes)
+
+class CenterOffsetHead(ConvHead):
+    def __init__(self):
+        super(CenterOffsetHead, self).__init__(3)
+
+class KeypointOffsetHead(ConvHead):
+    def __init__(self, n_kps):
+        super(KeypointOffsetHead, self).__init__(n_kps * 3)
 
 class SwinDePose(nn.Module):
     def __init__(
-            self, n_classes, n_pts, rndla_cfg, n_kps=8
+        self, n_classes, n_pts, rndla_cfg, n_kps=8
     ):
         super().__init__()
 
@@ -45,10 +112,9 @@ class SwinDePose(nn.Module):
         cnn = psp_models['resnet34'.lower()]()
 
         self.swin_ffb = swin.SwinTransformer()
-        self.psp_head = uper_head.UPerHead(in_channels=[96, 192, 384, 768], channels=256, in_index=[0, 1, 2, 3],
-                                           num_classes=2)
+        self.psp_head = uper_head.UPerHead(in_channels=[96,192,384,768],channels=256,in_index=[0,1,2,3],num_classes=2)
         # self.psp_fuse_head = uper_head.UPerHead(in_channels=[192,384,768,1536],channels=256,in_index=[0,1,2,3],num_classes=2)
-        self.ds_rgb_swin = [96, 192, 384, 768]
+        self.ds_rgb_swin = [96,192,384,768]
 
         rndla = RandLANet(rndla_cfg)
         self.rndla_pre_stages = rndla.fc0
@@ -88,8 +154,8 @@ class SwinDePose(nn.Module):
                     bn=True
                 )
             )
-
-        self.fuse_emb = [192, 384, 768, 1536]
+        
+        self.fuse_emb = [192,384,768,1536]    
 
         # ###################### upsample stages #############################
         self.cnn_up_stages = nn.ModuleList([
@@ -103,7 +169,7 @@ class SwinDePose(nn.Module):
         self.up_rndla_oc = []
         for j in range(rndla_cfg.num_layers):
             if j < 3:
-                self.up_rndla_oc.append(self.ds_rndla_oc[-j - 2])
+                self.up_rndla_oc.append(self.ds_rndla_oc[-j-2])
             else:
                 self.up_rndla_oc.append(self.ds_rndla_oc[0])
 
@@ -145,14 +211,14 @@ class SwinDePose(nn.Module):
         # We use 3D keypoint prediction header for pose estimation following PVN3D
         # You can use different prediction headers for different downstream tasks.
 
-        # self.rgbd_seg_layer = (
-        #     pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(n_classes, activation=None)
-        # )
-        #
+        self.rgbd_seg_layer = (
+            pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(128, bn=True, activation=nn.ReLU())
+            .conv1d(n_classes, activation=None)
+        )
+
         # self.ctr_ofst_layer = (
         #     pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
         #     .conv1d(128, bn=True, activation=nn.ReLU())
@@ -161,17 +227,18 @@ class SwinDePose(nn.Module):
         #     .conv1d(3, activation=None)
         # )
         #
-        # self.ctr_ofst_layer =  (
+        # self.kp_ofst_layer = (
         #     pt_utils.Seq(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
         #     .conv1d(128, bn=True, activation=nn.ReLU())
         #     .conv1d(128, bn=True, activation=nn.ReLU())
         #     .conv1d(128, bn=True, activation=nn.ReLU())
-        #     .conv1d(n_kps * 3, activation=None)
+        #     .conv1d(n_kps*3, activation=None)
         # )
 
-        self.rgbd_seg_layer = TransformerHead(128, n_classes)
-        self.ctr_ofst_layer = TransformerHead(128, 3)
-        self.ctr_ofst_layer = TransformerHead(128, n_kps*3)
+        # self.rgbd_seg_layer = RGBDSegmentationHead(n_classes)
+        self.ctr_ofst_layer = CenterOffsetHead()
+        self.kp_ofst_layer = KeypointOffsetHead(n_kps)
+
 
     @staticmethod
     def random_sample(feature, pool_idx):
@@ -218,7 +285,7 @@ class SwinDePose(nn.Module):
         return xyz, features
 
     def forward(
-            self, inputs, end_points=None, scale=1,
+        self, inputs, end_points=None, scale=1,
     ):
         """
         Params:
@@ -244,22 +311,19 @@ class SwinDePose(nn.Module):
         ds_na_emb = []
 
         # feat_nrm = self.swin_ffb(inputs['nrm_angles']) # nrm_angles:(1,3,480,640)  [1,96,120,160]->[1,192,60,80]->[1,384,30,40]->[1,768,15,20]
-        p_emb = inputs['cld_angle_nrm']  # p_emb:(1,9,19200)
-        p_emb = self.rndla_pre_stages(p_emb)  # [1, 8, 19200, 1]
+        p_emb = inputs['cld_angle_nrm'] # p_emb:(1,9,19200)
+        p_emb = self.rndla_pre_stages(p_emb) #[1, 8, 19200, 1]
         p_emb = p_emb.unsqueeze(dim=3)  # Batch*channel*npoints*1
         ds_pc_emb = []
-
+        
         for i_ds in range(4):
             # encode nrm angles downsampled feature
-            na_encoder_out_i, na_encoder_i, na_encoder_i_hw_shape = self.swin_ffb(na_encoder_i, na_encoder_i_hw_shape,
-                                                                                  i_ds)  # na_encoder_out_i: [1,96,120,160]->[1,192,60,80]->[1,384,30,40]->[1,768,15,20]
+            na_encoder_out_i, na_encoder_i, na_encoder_i_hw_shape = self.swin_ffb(na_encoder_i, na_encoder_i_hw_shape, i_ds) # na_encoder_out_i: [1,96,120,160]->[1,192,60,80]->[1,384,30,40]->[1,768,15,20]
             bs, c, hr, wr = na_encoder_out_i.size()
 
             # encode point cloud downsampled feature
-            f_encoder_i = self.rndla_ds_stages[i_ds](p_emb, inputs['cld_xyz%d' % i_ds], inputs[
-                'cld_nei_idx%d' % i_ds])  # f_encoder_i.shape: [1, 64, 19200, 1] -> [1, 128, 4800, 1] -> [1, 256, 1200, 1] -> [1, 512, 300, 1]
-            p_emb0 = self.random_sample(f_encoder_i, inputs[
-                'cld_sub_idx%d' % i_ds])  # [1, 64, 4800, 1] -> [1, 128, 1200, 1] ->[1, 256, 300, 1] -> [1, 512, 75, 1]
+            f_encoder_i = self.rndla_ds_stages[i_ds]( p_emb, inputs['cld_xyz%d' % i_ds], inputs['cld_nei_idx%d' % i_ds]) # f_encoder_i.shape: [1, 64, 19200, 1] -> [1, 128, 4800, 1] -> [1, 256, 1200, 1] -> [1, 512, 300, 1]
+            p_emb0 = self.random_sample(f_encoder_i, inputs['cld_sub_idx%d' % i_ds]) # [1, 64, 4800, 1] -> [1, 128, 1200, 1] ->[1, 256, 300, 1] -> [1, 512, 75, 1]
             if i_ds == 0:
                 ds_pc_emb.append(f_encoder_i)
 
@@ -270,27 +334,21 @@ class SwinDePose(nn.Module):
             na_emb = self.ds_fuse_p2r_fuse_layers[i_ds](torch.cat((na_encoder_out_i, p2r_emb), dim=1))  # (1,96,120,160)
 
             # fuse rgb feature to point feature
-            r2p_emb = self.random_sample(na_encoder_out_i.reshape(bs, c, hr * wr, 1),
-                                         inputs['r2p_ds_nei_idx%d' % i_ds]).view(bs, c, -1,
-                                                                                 1)  # (1,96,4800,1) -> (1,128,800,1) -> (1,512,200,1) -> (1, 1024, 50, 1)
-            r2p_emb = self.ds_fuse_r2p_pre_layers[i_ds](
-                r2p_emb)  # (1,64,3200,1)-> (1,128,800,1) -> (1,256,200,1) -> (1,512,50,1)
-            p_emb = self.ds_fuse_r2p_fuse_layers[i_ds](
-                torch.cat((p_emb0, r2p_emb), dim=1))  # (1,64,4800,1) -> (1,128,1200,1) -> (1,256,300,1) -> (1,512,75,1)
+            r2p_emb = self.random_sample(na_encoder_out_i.reshape(bs, c, hr * wr, 1), inputs['r2p_ds_nei_idx%d' % i_ds]).view(bs, c, -1, 1)  # (1,96,4800,1) -> (1,128,800,1) -> (1,512,200,1) -> (1, 1024, 50, 1)
+            r2p_emb = self.ds_fuse_r2p_pre_layers[i_ds](r2p_emb)  # (1,64,3200,1)-> (1,128,800,1) -> (1,256,200,1) -> (1,512,50,1)
+            p_emb = self.ds_fuse_r2p_fuse_layers[i_ds](torch.cat((p_emb0, r2p_emb), dim=1))  # (1,64,4800,1) -> (1,128,1200,1) -> (1,256,300,1) -> (1,512,75,1)
             ds_pc_emb.append(p_emb)
-
+        
         # ###################### decoding stages #############################
         n_up_layers = len(self.rndla_up_stages)
-        for i_up in range(n_up_layers - 1):
+        for i_up in range(n_up_layers-1):
             # decode rgb upsampled feature
-            na_emb0 = self.cnn_up_stages[i_up](na_emb)  # (1, 256, 30, 40) -> (1, 128, 60, 80) -> (1, 64, 120, 160)
+            na_emb0 = self.cnn_up_stages[i_up](na_emb) #(1, 256, 30, 40) -> (1, 128, 60, 80) -> (1, 64, 120, 160)
             bs, c, hr, wr = na_emb0.size()
 
             # decode point cloud upsampled feature
-            f_interp_i = self.nearest_interpolation(p_emb, inputs['cld_interp_idx%d' % (
-                        n_up_layers - i_up - 1)])  # f_interp_i: [1, 512, 300, 1] -> [1, 256, 1200, 1] -> [1, 128, 4800, 1]
-            f_decoder_i = self.rndla_up_stages[i_up](torch.cat([ds_pc_emb[-i_up - 2], f_interp_i],
-                                                               dim=1))  # f_decoder_i: [1, 256, 300, 1] -> [1, 128, 1200, 1] -> [1, 64, 4800, 1]
+            f_interp_i = self.nearest_interpolation(p_emb, inputs['cld_interp_idx%d' % (n_up_layers-i_up-1)])# f_interp_i: [1, 512, 300, 1] -> [1, 256, 1200, 1] -> [1, 128, 4800, 1]
+            f_decoder_i = self.rndla_up_stages[i_up](torch.cat([ds_pc_emb[-i_up - 2], f_interp_i], dim=1)) # f_decoder_i: [1, 256, 300, 1] -> [1, 128, 1200, 1] -> [1, 64, 4800, 1]
             p_emb0 = f_decoder_i
 
             # fuse point feauture to rgb feature
@@ -300,40 +358,39 @@ class SwinDePose(nn.Module):
             na_emb = self.up_fuse_p2r_fuse_layers[i_up](torch.cat((na_emb0, p2r_emb), dim=1))
 
             # fuse rgb feature to point feature
-            r2p_emb = self.random_sample(na_emb0.reshape(bs, c, hr * wr), inputs['r2p_up_nei_idx%d' % i_up]).view(bs, c,
-                                                                                                                  -1, 1)
+            r2p_emb = self.random_sample(na_emb0.reshape(bs, c, hr*wr), inputs['r2p_up_nei_idx%d' % i_up]).view(bs, c, -1, 1)
             r2p_emb = self.up_fuse_r2p_pre_layers[i_up](r2p_emb)
             p_emb = self.up_fuse_r2p_fuse_layers[i_up](torch.cat((p_emb0, r2p_emb), dim=1))
-
+        
         # final upsample layers:
         # na_emb = self.cnn_up_stages[n_up_layers-1](na_emb)
         f_interp_i = self.nearest_interpolation(
             p_emb, inputs['cld_interp_idx%d' % (0)]
-        )  # f_interp_i: [1, 64, 19200, 1]
-        p_emb = self.rndla_up_stages[n_up_layers - 1](
+        ) # f_interp_i: [1, 64, 19200, 1]
+        p_emb = self.rndla_up_stages[n_up_layers-1](
             torch.cat([ds_pc_emb[0], f_interp_i], dim=1)
-        ).squeeze(-1)  # p_emb: [1, 64, 19200]
-        bs, di, _, _ = na_emb.size()  # feat_up_nrm: [1, 256, 120, 160]
+        ).squeeze(-1) # p_emb: [1, 64, 19200]
+        bs, di, _, _ = na_emb.size() # feat_up_nrm: [1, 256, 120, 160]
         # feat_up_nrm = feat_up_nrm.view(bs, di, -1)
-        intep = ops.Upsample(size=[h, w], mode='bilinear', align_corners=False)
+        intep = ops.Upsample(size=[h,w],mode='bilinear',align_corners=False)
         feat_final_nrm = intep(na_emb)
         # torch.save(feat_final_nrm, os.path.join('/workspace','REPO','pose_estimation','ffb6d','train_log','lm_swinTiny_phone_fullSyn_dense_fullInc','phone',id_ind+'_img.pt'))
-
+        
         feat_final_nrm = feat_final_nrm.view(bs, di, -1)
         choose_emb = inputs['choose'].repeat(1, di, 1)
-        nrm_emb_c = torch.gather(feat_final_nrm, 2, choose_emb).contiguous()  # nrm_emb_c: [1, 256, 120, 160]
+        nrm_emb_c = torch.gather(feat_final_nrm, 2, choose_emb).contiguous() # nrm_emb_c: [1, 256, 120, 160]
 
         # Use DenseFusion in final layer, which will hurt performance due to overfitting
         # rgbd_emb = self.fusion_layer(rgb_emb, pcld_emb)
-
+        
         # Use simple concatenation. Good enough for fully fused RGBD feature.
-        rgbd_emb = torch.cat([nrm_emb_c, p_emb], dim=1)  # (1, 128, 19200)
+        rgbd_emb = torch.cat([nrm_emb_c, p_emb], dim=1) # (1, 128, 19200)
 
         # ###################### prediction stages #############################
         # print(self.up_rndla_oc[-1] + self.up_rgb_oc[-1])
-        rgbd_segs = self.rgbd_seg_layer(rgbd_emb)
-        pred_kp_ofs = self.kp_ofst_layer(rgbd_emb)
-        pred_ctr_ofs = self.ctr_ofst_layer(rgbd_emb)
+        rgbd_segs = self.rgbd_seg_layer(rgbd_emb) #(1,2,19200)
+        pred_kp_ofs = self.kp_ofst_layer(rgbd_emb) #(1,24,19200)
+        pred_ctr_ofs = self.ctr_ofst_layer(rgbd_emb) #(1,3,19200)
 
         pred_kp_ofs = pred_kp_ofs.view(
             bs, self.n_kps, 3, -1
@@ -347,6 +404,8 @@ class SwinDePose(nn.Module):
         end_points['pred_kp_ofs'] = pred_kp_ofs
         end_points['pred_ctr_ofs'] = pred_ctr_ofs
 
+        
+        
         return end_points
 
 
